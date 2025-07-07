@@ -5,9 +5,12 @@ import ProtectedPage from '@/components/ProtectedPage';
 export default function CheckoutPage() {
   async function handleCheckout() {
     const token = getToken();
-    const res = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/orders/checkout', {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/orders/checkout', {
       method: 'POST',
-      headers: { Authorization: `Bearer ${token}`, 'ngrok-skip-browser-warning': 'true' }
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'ngrok-skip-browser-warning': 'true'
+      }
     });
 
     const data = await res.json();
