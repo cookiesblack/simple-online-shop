@@ -22,7 +22,10 @@ export default function MerchantDashboard() {
 
   const fetchProducts = () => {
     fetch("http://localhost:3001/api/products/own", {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "ngrok-skip-browser-warning": "true",
+      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -69,7 +72,10 @@ export default function MerchantDashboard() {
 
     const res = await fetch(url, {
       method,
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "ngrok-skip-browser-warning": "true",
+      },
       body: formData,
     });
 

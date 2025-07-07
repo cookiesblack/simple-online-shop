@@ -5,7 +5,12 @@ export default function ProductCatalog() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/products')
+    fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/products', {
+      headers: {
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true'
+      },
+    })
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.error('Gagal fetch produk', err));

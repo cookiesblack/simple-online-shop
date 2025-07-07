@@ -19,6 +19,8 @@ export default function OrdersPage() {
     fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/orders', {
       headers: {
         Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true'
       },
     })
       .then((res) => res.json())

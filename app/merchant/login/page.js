@@ -13,12 +13,12 @@ export default function MerchantLoginPage() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        const res = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/merchant/login', {
+        const res = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/merchant/login', {
             method: 'POST',
             headers: {
-    'Content-Type': 'application/json',
-    'ngrok-skip-browser-warning': 'true'
-},
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'
+            },
             body: JSON.stringify(form)
         });
 
@@ -28,7 +28,7 @@ export default function MerchantLoginPage() {
             localStorage.setItem('merchant_token', data.access_token);
             localStorage.setItem('merchant_name', data?.merchant.store_name || 'Merchant');
             console.log(data);
-            
+
             alert('Login berhasil');
             //   router.push('/merchant/dashboard');
             window.location.href = '/merchant/dashboard';

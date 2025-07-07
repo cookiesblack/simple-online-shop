@@ -7,7 +7,7 @@ export default function CheckoutPage() {
     const token = getToken();
     const res = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/orders/checkout', {
       method: 'POST',
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}`, 'ngrok-skip-browser-warning': 'true' }
     });
 
     const data = await res.json();

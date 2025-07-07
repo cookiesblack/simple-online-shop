@@ -16,7 +16,7 @@ export default function CartPage() {
       return
     }
 
-    fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/cart', {
+    fetch(process.env.NEXT_PUBLIC_API_BASE_URL + '/api/cart', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -72,10 +72,10 @@ export default function CartPage() {
     }
   }
 
-//   const totalPrice = cartItems.reduce(
-//     (total, item) => total + item.product.price * item.quantity,
-//     0
-//   )
+  //   const totalPrice = cartItems.reduce(
+  //     (total, item) => total + item.product.price * item.quantity,
+  //     0
+  //   )
 
   if (loading) return <p className="p-4">Loading keranjang...</p>
 

@@ -19,8 +19,9 @@ export default function AddProduct() {
     const res = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/merchant/products', {
       method: 'POST',
       headers: {
+        Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
+        'ngrok-skip-browser-warning': 'true'
       },
       body: JSON.stringify(form)
     });
