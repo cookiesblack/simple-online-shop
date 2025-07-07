@@ -16,11 +16,12 @@ export default function HomePage() {
     setIsLoggedIn(!!token)
 
     // Fetch product list
-    fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/products', {
+    fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/products`, {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'ngrok-skip-browser-warning': 'true'
-      },
+      }
     })
       .then(res => res.json())
       .then(data => setProducts(data))
