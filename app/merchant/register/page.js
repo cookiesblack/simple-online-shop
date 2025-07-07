@@ -12,7 +12,10 @@ export default function RegisterMerchant() {
     e.preventDefault();
     const res = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/merchant/register', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+    'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': 'true'
+},
       body: JSON.stringify(form)
     });
 

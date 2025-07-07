@@ -13,7 +13,10 @@ export default function LoginUser() {
 
     const res = await fetch(process.env.NEXT_PUBLIC_API_BASE_URL+'/api/auth/login', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+    'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': 'true'
+},
       body: JSON.stringify({ email, password }),
     });
 
